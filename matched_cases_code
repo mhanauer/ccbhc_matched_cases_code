@@ -15,6 +15,7 @@ qlik = read.csv("Qlik CHS.csv", header = TRUE)
 access = read.csv("Access CHS.csv", header = TRUE)
 ## Make all names lower case so we can match them later
 qlik$name_iSalus_id = paste0(qlik$IsalusChartNumber,tolower(qlik$ClientName))
+# Change the names so they match for merging later
 names(qlik)[1] = c("iSalus.ID")
 access$name_iSalus_id = paste0(access$iSalus.ID, tolower(access$Client.Name))
 # Get all the matches with qlik from access
